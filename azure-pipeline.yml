@@ -21,4 +21,5 @@ steps:
   
   - task: DotNetCoreCLI@2
     displayName: 'Run tests'
-    command: 'test'
+    inputs:
+      command: 'test'
