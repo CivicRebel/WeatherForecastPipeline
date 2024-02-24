@@ -18,10 +18,15 @@ steps:
     inputs:
       command: 'build'
       arguments: '--no-restore --configuration Release'
-      projects: 
-        - '**/*.csproj'
-        - '../WeatherForecast.Tests'
+      projects: '**/*.csproj'
   
+    - task: DotNetCoreCLI@2
+    displayName: 'Build the project'
+    inputs:
+      command: 'build'
+      arguments: '--no-restore --configuration Release'
+      projects: '../WeatherForecast.Tests'
+
   - task: DotNetCoreCLI@2
     displayName: 'Run tests'
     inputs:
