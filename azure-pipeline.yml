@@ -1,6 +1,13 @@
-task: DotNetCoreCLI@2
-  displayName: 'Build the project'
-  inputs:
-    command: 'build'
-    arguments: '--no-restore --configuration Release'
-    projects: '**/*.csproj'
+trigger:
+  - '*'
+
+pool: 
+  name: Default
+
+stages:
+- task: DotNetCoreCLI@2
+    displayName: 'Build the project'
+    inputs:
+      command: 'build'
+      arguments: '--no-restore --configuration Release'
+      projects: '**/*.csproj'
