@@ -24,4 +24,4 @@ steps:
     displayName: 'Run tests'
     inputs:
       command: 'test'
-      projects: '**/*[Ttests]/*.csproj'
+      projects: '../*[Ttests]/*.csproj'
