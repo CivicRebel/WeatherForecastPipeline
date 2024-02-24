@@ -3,14 +3,22 @@ trigger:
     include:
       - main
 
-
 pool: 
   name: Default
 
 steps:
+  - task: DotNetCoreCLI@2
+    displayName: 'Restore NuGet packages'
+    command: 'restore'
+    projects: '**/*.csproj'
+
   - task: DotNetCoreCLI@2
     displayName: 'Build the project'
     inputs:
       command: 'build'
       arguments: '--no-restore --configuration Release'
       projects: '**/*.csproj'
+  
+  - task: DotNetCoreCLI@2
+    displayName: 'Run tests'
+    command: 'test'
