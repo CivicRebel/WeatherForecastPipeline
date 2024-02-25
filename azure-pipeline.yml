@@ -33,5 +33,5 @@ steps:
     displayName: 'Publish Artifact: drop'
     condition: succeeded()
     inputs:
-      pathToPublish: '$(Build.ArtifactStagingDirectory)/CustomNameZip
+      pathToPublish: '$(Build.ArtifactStagingDirectory)/CustomNameZip'
       artifactName: 'CustomArtifactName'
